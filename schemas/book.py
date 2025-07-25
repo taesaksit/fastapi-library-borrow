@@ -1,7 +1,8 @@
 from pydantic import BaseModel, constr, conint
-from typing import Optional
+from typing import Optional, List
 
 from schemas.category import CategoryResponse
+from schemas.borrow import BorrowResponse
 
 
 class BookBase(BaseModel):
@@ -24,3 +25,6 @@ class BookUpdate(BookBase):
 
 class BookResponse(BookBase):
     category: CategoryResponse
+  
+    class Config:
+        from_attributes = True

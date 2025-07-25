@@ -1,8 +1,7 @@
 from pydantic import BaseModel, Field
 from typing import Optional
 from datetime import date
-from schemas.book import BookResponse
-from schemas.user import UserResponse
+from models.borrow import BorrowStatus
 
 
 class BorrowBase(BaseModel):
@@ -11,13 +10,21 @@ class BorrowBase(BaseModel):
     borrow_date: Optional[date] = Field(default_factory=date.today)
     due_date: date = None
     return_date: Optional[date] = None
+    status: Optional[BorrowStatus] = BorrowStatus.borrowed
 
 
 class BorrowCreate(BorrowBase):
     pass
 
-
+# Custom
 class BorrowResponse(BaseModel):
+    borrower: str
     book: str
     borrow_date: date
     due_date: date
+
+# Default
+# class BorrowResponse(BorrowBase):
+#     pass
+#     class Config:
+#         from_attributes = True

@@ -1,25 +1,24 @@
-from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
-from sqlalchemy.orm import relationship
-from datetime import datetime, timezone
+from sqlalchemy import  ForeignKey
+from sqlalchemy.orm import Mapped, mapped_column, relationship
 from config.database import Base
+from typing import TYPE_CHECKING, List
+
+if TYPE_CHECKING:
+    from categories import Category
+    from borrow import Borrows
 
 
 class Book(Base):
     __tablename__ = "books"
-    id = Column(Integer, primary_key=True, index=True)
-    category_id = Column(
-        Integer,
-        ForeignKey(
-            "categories.id",
-            onupdate="CASCADE",
-            ondelete="CASCADE",
-        ),
+    id: Mapped[int] = mapped_column(primary_key=True, index=True)
+    category_id: Mapped[int] = mapped_column(
+        ForeignKey("categories.id", onupdate="CASCADE", ondelete="CASCADE")
     )
-    title = Column(String, nullable=False)
-    author = Column(String, nullable=False)
-    year = Column(Integer, nullable=False)
-    quantity = Column(Integer, nullable=False)
-    available_quantity = Column(Integer, nullable=False)
+    title: Mapped[str] = mapped_column(nullable=False)
+    author: Mapped[str] = mapped_column(nullable=False)
+    year: Mapped[int] = mapped_column(nullable=False)
+    quantity: Mapped[int] = mapped_column(nullable=False)
+    available_quantity: Mapped[int] = mapped_column(nullable=False)
 
-    category = relationship("Category", back_populates="books")
-    borrows = relationship("Borrows", back_populates="books")
+    category: Mapped["Category"] = relationship("Category", back_populates="books")
+    borrows: Mapped[List["Borrows"]] = relationship("Borrows", back_populates="book")
