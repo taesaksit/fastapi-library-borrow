@@ -1,8 +1,14 @@
-from sqlalchemy import Column, Integer, String, DateTime, Date, ForeignKey
+from sqlalchemy import Column, Integer, Date, ForeignKey, Enum as SQLEnum
 from sqlalchemy.orm import relationship
 from datetime import date
 from config.database import Base
+import enum
 
+
+class BorrowStatus(str, enum.Enum):
+    RETURNED = "returned"
+    BORROWED = "borrowed"
+    WAITINGAPPROVE = "waiting_approve"
 
 class Borrows(Base):
     __tablename__ = "borrows"
@@ -28,6 +34,7 @@ class Borrows(Base):
     borrow_date = Column(Date, nullable=False, default=date.today)
     due_date = Column(Date, nullable=False)
     return_date = Column(Date, nullable=True)
-
+    status = Column(SQLEnum(BorrowStatus), nullable=False, default=BorrowStatus.BORROWED)
+    
     books = relationship("Book", back_populates="borrows")
     users = relationship("User", back_populates="borrows")
