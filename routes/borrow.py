@@ -18,4 +18,4 @@ def create_borrow(
     db: Session = Depends(get_db),
     user: User = Depends(get_current_user),
 ):
-    return services.create_borrow(borrow, db)
+    return services.create_borrow(borrow,user, db)

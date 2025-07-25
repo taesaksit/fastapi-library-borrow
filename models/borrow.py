@@ -14,6 +14,7 @@ class Borrows(Base):
             onupdate="CASCADE",
             ondelete="CASCADE",
         ),
+        nullable=False,
     )
     user_id = Column(
         Integer,
@@ -22,10 +23,11 @@ class Borrows(Base):
             onupdate="CASCADE",
             ondelete="CASCADE",
         ),
+        nullable=False,
     )
     borrow_date = Column(Date, nullable=False, default=date.today)
     due_date = Column(Date, nullable=False)
     return_date = Column(Date, nullable=True)
-    
-    books = relationship("Book" , back_populates="borrows")
+
+    books = relationship("Book", back_populates="borrows")
     users = relationship("User", back_populates="borrows")
