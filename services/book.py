@@ -43,8 +43,22 @@ def update_book(book_id: int, book: BookUpdate, db: Session) -> ResponseSchema:
 
         update_data = book.model_dump(exclude_unset=True)
 
+        if "quantity" in update_data:
+            new_quantity = update_data["quantity"]
+            borrowed_count = book_db.quantity - book_db.available_quantity
+
+            # ตรวจสอบว่า new_quantity ไม่ต่ำกว่าจำนวนที่ถูกยืมอยู่
+            if new_quantity < borrowed_count:
+                raise HTTPException(
+                    status_code=status.HTTP_400_BAD_REQUEST,
+                    detail=f"Cannot set quantity lower than borrowed count ({borrowed_count})",
+                )
+
+            update_data["available_quantity"] = new_quantity - borrowed_count
+
         for key, value in update_data.items():
             setattr(book_db, key, value)
+
         db.commit()
         db.refresh(book_db)
 

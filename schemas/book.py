@@ -24,6 +24,7 @@ class BookUpdate(BookBase):
 
 
 class BookResponse(BookBase):
+    id: int
     category: CategoryResponse
   
     class Config:
