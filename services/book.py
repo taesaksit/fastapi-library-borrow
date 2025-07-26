@@ -6,7 +6,7 @@ from sqlalchemy import or_
 
 from models.categories import Category
 from models.book import Book
-from schemas.book import BookCreate, BookUpdate, BookResponse
+from schemas.book import BookCreate, BookUpdate
 from schemas.response_custom import ResponseSchema
 
 

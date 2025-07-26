@@ -1,6 +1,7 @@
 from pydantic import BaseModel, Field
 from typing import Optional
 from datetime import date
+from models import book
 from models.borrow import BorrowStatus
 
 
@@ -17,14 +18,28 @@ class BorrowCreate(BorrowBase):
     pass
 
 # Custom
-class BorrowResponse(BaseModel):
+class BorrowBookResponse(BaseModel):
     borrower: str
     book: str
     borrow_date: date
     due_date: date
 
-# Default
-# class BorrowResponse(BorrowBase):
-#     pass
-#     class Config:
-#         from_attributes = True
+class ReturnBookResponse(BaseModel):
+    borrow_id: int
+    book: str
+    return_date: date
+    status: BorrowStatus
+
+class ApproveReturnBookResponse(ReturnBookResponse):
+    pass
+
+class HistoryResponse(BaseModel):
+    book: str
+    user: str
+    borrow_date: date
+    due_date: date
+    return_date: date
+    status: BorrowStatus
+    
+class CurrentBorrowResponse(HistoryResponse):
+    pass

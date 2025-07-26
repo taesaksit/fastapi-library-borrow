@@ -4,7 +4,7 @@ from sqlalchemy.exc import SQLAlchemyError
 
 
 from models.categories import Category
-from schemas.category import CategoryCreate, CategoryResponse
+from schemas.category import CategoryCreate
 from schemas.response_custom import ResponseSchema
 
 

@@ -2,7 +2,7 @@ from pydantic import BaseModel, constr, conint
 from typing import Optional, List
 
 from schemas.category import CategoryResponse
-from schemas.borrow import BorrowResponse
+
 
 
 class BookBase(BaseModel):
