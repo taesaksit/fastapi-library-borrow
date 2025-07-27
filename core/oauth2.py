@@ -6,6 +6,7 @@ from sqlalchemy.orm import Session
 from core.jwt import SECRET_KEY, ALGORITHM
 from config.database import get_db
 from models.user import User
+from schemas.response_custom import ResponseSchema
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/api/auth/login")
 
@@ -47,9 +48,9 @@ def get_current_user(
 def allow_roles(*roles: list[str]):
     def role_checker(current_user: User = Depends(get_current_user)):
         if current_user.role not in roles:
-            raise HTTPException(
-                status_code=status.HTTP_403_FORBIDDEN,
-                detail="Access denied",
+            return ResponseSchema(
+                status="error",
+                message="Access denied",
             )
         return current_user
 

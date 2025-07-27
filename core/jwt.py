@@ -4,7 +4,7 @@ from datetime import datetime, timedelta, timezone
 
 SECRET_KEY = "LIBRARY_MANAGEMENT"
 ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 5
+ACCESS_TOKEN_EXPIRE_MINUTES = 2
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
