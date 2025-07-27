@@ -48,9 +48,9 @@ def get_current_user(
 def allow_roles(*roles: list[str]):
     def role_checker(current_user: User = Depends(get_current_user)):
         if current_user.role not in roles:
-            return ResponseSchema(
-                status="error",
-                message="Access denied",
+            raise HTTPException(
+                status_code=status.HTTP_403_FORBIDDEN,
+                detail="Access denied: insufficient permissions",
             )
         return current_user
 

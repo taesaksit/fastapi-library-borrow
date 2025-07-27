@@ -30,26 +30,8 @@ def create_category(
     response_model=ResponseSchema[List[CategoryResponse]],
     tags=["category"],
 )
-def get_all_categories(
-    db: Session = Depends(get_db),
-    user: User = Depends(allow_roles("admin")),
-):
+def get_all_categories(db: Session = Depends(get_db)):
     return services.get_all_categories(db)
-
-
-@router.get(
-    "/with-book-count",
-    response_model=ResponseSchema,
-    tags=["category"],
-)
-def get_categories_with_book_count(
-    db: Session = Depends(get_db),
-    user: User = Depends(allow_roles("admin")),
-):
-    """
-    Get all categories with the count of books in each category
-    """
-    return services.get_categories_with_book_count(db)
 
 
 @router.put(
