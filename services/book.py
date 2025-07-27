@@ -36,9 +36,9 @@ def update_book(book_id: int, book: BookUpdate, db: Session) -> ResponseSchema:
     try:
         book_db = db.query(Book).filter(Book.id == book_id).first()
         if not book_db:
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND,
-                detail="Book not found",
+            raise ResponseSchema(
+                status="success",
+                message="Book not found",
             )
 
         update_data = book.model_dump(exclude_unset=True)
@@ -49,9 +49,9 @@ def update_book(book_id: int, book: BookUpdate, db: Session) -> ResponseSchema:
 
             # ตรวจสอบว่า new_quantity ไม่ต่ำกว่าจำนวนที่ถูกยืมอยู่
             if new_quantity < borrowed_count:
-                raise HTTPException(
-                    status_code=status.HTTP_400_BAD_REQUEST,
-                    detail=f"Cannot set quantity lower than borrowed count ({borrowed_count})",
+                raise ResponseSchema(
+                    status="success",
+                    message=f"Cannot set quantity lower than borrowed count ({borrowed_count})",
                 )
 
             update_data["available_quantity"] = new_quantity - borrowed_count
