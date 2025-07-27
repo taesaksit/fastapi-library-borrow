@@ -7,7 +7,7 @@
 
 ## 👤 สำหรับผู้ใช้งาน (USER)
 
-### 1. หน้าแรก
+### 1. เข้าสู่ระบบ
 <img width="957" height="686" alt="image" src="https://github.com/user-attachments/assets/17ea546a-5577-4b2e-adc3-b945af5236ab" />
 
 
