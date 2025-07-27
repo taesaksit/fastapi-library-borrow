@@ -17,9 +17,10 @@
 <img width="948" height="690" alt="image" src="https://github.com/user-attachments/assets/21af2dce-6ce9-4e03-9dad-a6fbc973686d" />
 
 ### 4. ประวัติการยืม
-<img width="949" height="683" alt="image" src="https://github.com/user-attachments/assets/2f80abea-33cb-45ca-af24-97de741c878c" />
+<img width="943" height="623" alt="image" src="https://github.com/user-attachments/assets/f01a5180-3dee-4686-a7e2-a4b680811042" />
 
 ### 5. คืนหนังสือ
+<img width="949" height="683" alt="image" src="https://github.com/user-attachments/assets/2f80abea-33cb-45ca-af24-97de741c878c" />
 <img width="972" height="696" alt="image" src="https://github.com/user-attachments/assets/1c5b03b0-782e-4ec7-851b-474ff5fee9ef" />
 
 ### 6. หลังคืนหนังสือ
