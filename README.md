@@ -23,22 +23,23 @@
 <img width="972" height="696" alt="image" src="https://github.com/user-attachments/assets/1c5b03b0-782e-4ec7-851b-474ff5fee9ef" />
 
 ### 6. หลังคืนหนังสือ
-![Uploading image.png…]()
+<img width="946" height="690" alt="image" src="https://github.com/user-attachments/assets/c5e0ac0f-b681-40df-adc3-310f2fa01963" />
 
 ---
 ## 🔑 สำหรับผู้ดูแลระบบ (ADMIN)
 
 ### 1. หน้าแรก
-![หน้าแรก](https://github.com/user-attachments/assets/f8885dca-1158-4433-9512-cfdfb372c27f)
+<img width="960" height="623" alt="image" src="https://github.com/user-attachments/assets/1bd41deb-6b2c-4fea-a258-b2fa4bbd7fd1" />
 
 ### 2. จัดการหนังสือ
-![จัดการหนังสือ](https://github.com/user-attachments/assets/946dba45-d7f0-40cd-803c-1575f26a714b)
+<img width="948" height="617" alt="image" src="https://github.com/user-attachments/assets/92be8a1e-55a4-48ac-8ace-51288137db32" />
 
 ### 3. จัดการหมวดหมู่
-![จัดการหมวดหมู่](https://github.com/user-attachments/assets/74e3c2ef-3409-4ae1-babd-6438091e1def)
+<img width="970" height="629" alt="image" src="https://github.com/user-attachments/assets/d0c18670-771d-47b7-8c73-ebbfd1fbc871" />
 
 ### 4. จัดการการยืม-คืน
-![จัดการการยืมคืน](https://github.com/user-attachments/assets/647a00c2-11be-45d5-914a-d12a2ce5edfa)
+![Uploading image.png…]()
+
 
 ---
 
