@@ -13,6 +13,7 @@ from schemas.borrow import (
     BorrowBookResponse,
     HistoryResponse,
     ReturnBookResponse,
+    ActiveBorrowResponse,
 )
 from schemas.response_custom import ResponseSchema
 
@@ -58,6 +59,40 @@ def decrement_available_quantity(book_id: int, db: Session):
             detail=f"Database error: {str(e._message())}",
         )
 
+def get_borrow(user: User, db: Session) -> ResponseSchema:
+    try:
+        # Query borrows with status "borrowed" and join with book and user
+        borrows = (
+            db.query(Borrows)
+            .filter(Borrows.status == BorrowStatus.borrowed)
+            .all()
+        )
+
+        # Create response list with book title, user name, borrow date, and due date
+        responses = [
+            ActiveBorrowResponse(
+                book=borrow.book.title,
+                user=borrow.user.name,
+                borrow_date=borrow.borrow_date,
+                due_date=borrow.due_date,
+                return_date=borrow.return_date,
+                status=borrow.status,
+            )
+            for borrow in borrows
+        ]
+
+        return ResponseSchema(
+            status="success",
+            message="All borrowed books retrieved successfully",
+            data=responses,
+        )
+
+    except SQLAlchemyError as e:
+        db.rollback()
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Database error: {str(e._message())}",
+        )
 
 def create_borrow(borrow: BorrowCreate, user: User, db: Session) -> ResponseSchema:
     try:

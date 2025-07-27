@@ -11,6 +11,7 @@ from schemas.borrow import (
     CurrentBorrowResponse,
     ReturnBookResponse,
     HistoryResponse,
+    ActiveBorrowResponse,
 )
 from services import borrow as services
 from models.user import User
@@ -80,3 +81,15 @@ def current_borrow(
     user: User = Depends(get_current_user),
 ):
     return services.current_borrow(user, db)
+
+
+@router.get(
+    "/all_borrowed",
+    response_model=ResponseSchema[List[ActiveBorrowResponse]],
+    tags=["borrow"],
+)
+def get_all_borrowed_books(
+    db: Session = Depends(get_db),
+    user: User = Depends(allow_roles("admin",'borrower')),
+):
+    return services.get_borrow(user, db)

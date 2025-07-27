@@ -43,3 +43,11 @@ class HistoryResponse(BaseModel):
     
 class CurrentBorrowResponse(HistoryResponse):
     pass
+
+class ActiveBorrowResponse(BaseModel):
+    book: str
+    user: str
+    borrow_date: date
+    due_date: date
+    return_date: Optional[date] = None
+    status: BorrowStatus
