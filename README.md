@@ -32,13 +32,16 @@
 <img width="960" height="623" alt="image" src="https://github.com/user-attachments/assets/1bd41deb-6b2c-4fea-a258-b2fa4bbd7fd1" />
 
 ### 2. จัดการหนังสือ
-<img width="948" height="617" alt="image" src="https://github.com/user-attachments/assets/92be8a1e-55a4-48ac-8ace-51288137db32" />
+<img width="946" height="617" alt="image" src="https://github.com/user-attachments/assets/cfa1eacd-5b8a-42b1-8e41-011e41e4b35c" />
+
 
 ### 3. จัดการหมวดหมู่
-<img width="970" height="629" alt="image" src="https://github.com/user-attachments/assets/d0c18670-771d-47b7-8c73-ebbfd1fbc871" />
+<img width="954" height="619" alt="image" src="https://github.com/user-attachments/assets/2a217c5d-890d-40b2-921d-4ca82d14c19f" />
+
 
 ### 4. จัดการการยืม-คืน
-![Uploading image.png…]()
+<img width="953" height="618" alt="image" src="https://github.com/user-attachments/assets/f2ef5c80-218e-44a6-a1ce-8c766027b6d0" />
+
 
 
 ---
