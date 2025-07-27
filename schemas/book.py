@@ -19,6 +19,7 @@ class BookCreate(BookBase):
 
 
 class BookUpdate(BookBase):
+    category_id : int
     quantity: Optional[int] = None
     pass
 
