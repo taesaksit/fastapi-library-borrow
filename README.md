@@ -29,14 +29,14 @@
 
 ## 🔑 สำหรับผู้ดูแลระบบ (ADMIN)
 
-### 1. หน้าควบคุมระบบ
-![หน้าควบคุมระบบ](https://github.com/user-attachments/assets/f8885dca-1158-4433-9512-cfdfb372c27f)
+### 1. หน้าแรก
+![หน้าแรก](https://github.com/user-attachments/assets/f8885dca-1158-4433-9512-cfdfb372c27f)
 
 ### 2. จัดการหนังสือ
 ![จัดการหนังสือ](https://github.com/user-attachments/assets/946dba45-d7f0-40cd-803c-1575f26a714b)
 
-### 3. จัดการผู้ใช้งาน
-![จัดการผู้ใช้งาน](https://github.com/user-attachments/assets/74e3c2ef-3409-4ae1-babd-6438091e1def)
+### 3. จัดการหมวดหมู่
+![จัดการหมวดหมู่](https://github.com/user-attachments/assets/74e3c2ef-3409-4ae1-babd-6438091e1def)
 
 ### 4. จัดการการยืม-คืน
 ![จัดการการยืมคืน](https://github.com/user-attachments/assets/647a00c2-11be-45d5-914a-d12a2ce5edfa)
@@ -45,7 +45,7 @@
 
 ## 🛠 Tech Stack
 - **Backend:** FastAPI + SQLAlchemy + JWT
-- **Frontend:** React + TypeScript + Tailwind
+- **Frontend:** React + TypeScript + Tailwind and Shadui
 - **Database:** PostgreSQL
 
 ---
