@@ -44,7 +44,7 @@
 ---
 
 ## 🛠 Tech Stack
-- **Backend:** FastAPI + SQLAlchemy + JWT
+- **Backend:** FastAPI + SQLAlchemy + Pydantic + Alembic + JWT
 - **Frontend:** React + TypeScript + Tailwind and Shadui
 - **Database:** PostgreSQL
 
