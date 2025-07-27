@@ -8,25 +8,24 @@
 ## 👤 สำหรับผู้ใช้งาน (USER)
 
 ### 1. หน้าแรก
-![หน้าแรก](https://github.com/user-attachments/assets/5c75e8a4-0bc5-41c8-b39c-f9f4fe360298)
+(https://github.com/user-attachments/assets/5c75e8a4-0bc5-41c8-b39c-f9f4fe360298)
 
 ### 2. รายการหนังสือ
-![รายการหนังสือ]<img width="937" height="679" alt="image" src="https://github.com/user-attachments/assets/896a6065-a29d-4229-895e-7c5adfe2e946" />
+<img width="937" height="679" alt="image" src="https://github.com/user-attachments/assets/896a6065-a29d-4229-895e-7c5adfe2e946" />
 
 ### 3. ยืมหนังสือ
-![ยืมหนังสือ]<img width="948" height="690" alt="image" src="https://github.com/user-attachments/assets/21af2dce-6ce9-4e03-9dad-a6fbc973686d" />
+<img width="948" height="690" alt="image" src="https://github.com/user-attachments/assets/21af2dce-6ce9-4e03-9dad-a6fbc973686d" />
 
 ### 4. ประวัติการยืม
-![ประวัติการยืม]<img width="954" height="678" alt="image" src="https://github.com/user-attachments/assets/b21b171f-0d20-405f-9170-c70916e3f73f" />
+<img width="949" height="683" alt="image" src="https://github.com/user-attachments/assets/2f80abea-33cb-45ca-af24-97de741c878c" />
 
 ### 5. คืนหนังสือ
-![คืนหนังสือ](https://github.com/user-attachments/assets/9f627213-3445-4fd7-9a8d-d0efb3663eaa)
+<img width="972" height="696" alt="image" src="https://github.com/user-attachments/assets/1c5b03b0-782e-4ec7-851b-474ff5fee9ef" />
 
 ### 6. หลังคืนหนังสือ
-![หลังคืนหนังสือ](https://github.com/user-attachments/assets/e1fd976e-bbb6-4ca5-bd27-9f60d76f0c0c)
+![Uploading image.png…]()
 
 ---
-
 ## 🔑 สำหรับผู้ดูแลระบบ (ADMIN)
 
 ### 1. หน้าแรก
