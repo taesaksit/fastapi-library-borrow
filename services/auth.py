@@ -47,15 +47,15 @@ def login(user: UserLogin, db: Session) -> ResponseSchema:
         db_user = db.query(User).filter(User.email == user.email).first()
 
         if not db_user:
-            raise HTTPException(
-                status_code=status.HTTP_401_UNAUTHORIZED,
-                detail="Email is incorrect",
+            return ResponseSchema(
+                status="error",
+                message="Email is incorrect",
             )
-
+     
         if not verify_password(user.password, db_user.password):
-            raise HTTPException(
-                status_code=status.HTTP_401_UNAUTHORIZED,
-                detail="Password is incorrect",
+            return ResponseSchema(
+                status="error",
+                message="Password is incorrect",
             )
 
         access_token = create_access_token(data={"sub": db_user.email})
