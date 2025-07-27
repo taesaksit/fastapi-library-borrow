@@ -59,18 +59,16 @@ def decrement_available_quantity(book_id: int, db: Session):
             detail=f"Database error: {str(e._message())}",
         )
 
+
 def get_borrow(user: User, db: Session) -> ResponseSchema:
     try:
         # Query borrows with status "borrowed" and join with book and user
-        borrows = (
-            db.query(Borrows)
-            .filter(Borrows.status == BorrowStatus.borrowed)
-            .all()
-        )
+        borrows = db.query(Borrows).all()
 
         # Create response list with book title, user name, borrow date, and due date
         responses = [
             ActiveBorrowResponse(
+                borrow_id=borrow.id,
                 book=borrow.book.title,
                 user=borrow.user.name,
                 borrow_date=borrow.borrow_date,
@@ -93,6 +91,7 @@ def get_borrow(user: User, db: Session) -> ResponseSchema:
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Database error: {str(e._message())}",
         )
+
 
 def create_borrow(borrow: BorrowCreate, user: User, db: Session) -> ResponseSchema:
     try:
@@ -285,13 +284,13 @@ def current_borrow(user: User, db: Session) -> ResponseSchema:
         borrows = (
             db.query(Borrows)
             .filter(Borrows.user_id == user.id)
-            .filter(Borrows.status == BorrowStatus.borrowed)
             .all()
         )
 
         # ใช้ list comprehension
         responses = [
-            HistoryResponse(
+            ActiveBorrowResponse(
+                borrow_id=borrow.id,
                 book=borrow.book.title,
                 user=borrow.user.name,
                 borrow_date=borrow.borrow_date,

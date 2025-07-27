@@ -47,7 +47,7 @@ def return_borrow(
 
 
 @router.put(
-    "/approve/{borrow_id}",
+    "/approve_return/{borrow_id}",
     response_model=ResponseSchema[ApproveReturnBookResponse],
     tags=["borrow"],
 )
@@ -73,7 +73,7 @@ def history_borrow(
 
 @router.get(
     "/current_borrow",
-    response_model=ResponseSchema[List[CurrentBorrowResponse]],
+    response_model=ResponseSchema[List[ActiveBorrowResponse]],
     tags=["borrow"],
 )
 def current_borrow(

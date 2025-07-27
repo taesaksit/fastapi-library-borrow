@@ -45,6 +45,7 @@ class CurrentBorrowResponse(HistoryResponse):
     pass
 
 class ActiveBorrowResponse(BaseModel):
+    borrow_id: int
     book: str
     user: str
     borrow_date: date
