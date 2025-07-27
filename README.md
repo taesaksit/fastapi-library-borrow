@@ -11,7 +11,7 @@
 ![หน้าแรก](https://github.com/user-attachments/assets/5c75e8a4-0bc5-41c8-b39c-f9f4fe360298)
 
 ### 2. รายการหนังสือ
-![รายการหนังสือ](https://github.com/user-attachments/assets/4c3c04f1-ac82-43e9-bae3-b34ba2887b5e)
+![รายการหนังสือ]<img width="965" height="693" alt="image" src="https://github.com/user-attachments/assets/a8de184a-1325-4b4f-875f-b5c8fb3e1bdc" />
 
 ### 3. ยืมหนังสือ
 ![ยืมหนังสือ](https://github.com/user-attachments/assets/28a8a0b3-f40d-487e-a813-aee0e23e905d)
