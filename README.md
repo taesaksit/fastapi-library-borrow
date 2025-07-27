@@ -13,17 +13,17 @@
 ### 2. รายการหนังสือ
 ![รายการหนังสือ](https://github.com/user-attachments/assets/4c3c04f1-ac82-43e9-bae3-b34ba2887b5e)
 
-### 3. ค้นหาหนังสือ
-![ค้นหาหนังสือ](https://github.com/user-attachments/assets/28a8a0b3-f40d-487e-a813-aee0e23e905d)
+### 3. ยืมหนังสือ
+![ยืมหนังสือ](https://github.com/user-attachments/assets/28a8a0b3-f40d-487e-a813-aee0e23e905d)
 
-### 4. รายละเอียดหนังสือ
-![รายละเอียดหนังสือ](https://github.com/user-attachments/assets/7104cd00-3f57-493e-9af8-27cbc86f2f9d)
+### 4. ประวัติการยืม
+![ประวัติการยืม](https://github.com/user-attachments/assets/7104cd00-3f57-493e-9af8-27cbc86f2f9d)
 
-### 5. ประวัติการยืม
-![ประวัติการยืม](https://github.com/user-attachments/assets/9f627213-3445-4fd7-9a8d-d0efb3663eaa)
+### 5. คืนหนังสือ
+![คืนหนังสือ](https://github.com/user-attachments/assets/9f627213-3445-4fd7-9a8d-d0efb3663eaa)
 
-### 6. โปรไฟล์ผู้ใช้
-![โปรไฟล์ผู้ใช้](https://github.com/user-attachments/assets/e1fd976e-bbb6-4ca5-bd27-9f60d76f0c0c)
+### 6. หลังคืนหนังสือ
+![หลังคืนหนังสือ](https://github.com/user-attachments/assets/e1fd976e-bbb6-4ca5-bd27-9f60d76f0c0c)
 
 ---
 
