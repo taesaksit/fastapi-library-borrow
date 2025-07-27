@@ -1,3 +1,4 @@
+from os import name
 from fastapi import HTTPException, status
 from sqlalchemy.orm import Session
 from sqlalchemy.exc import SQLAlchemyError
@@ -58,7 +59,11 @@ def login(user: UserLogin, db: Session) -> ResponseSchema:
                 message="Password is incorrect",
             )
 
-        access_token = create_access_token(data={"sub": db_user.email})
+        access_token = create_access_token(data={
+            "sub": db_user.email,
+            "name": db_user.name,
+            "role": db_user.role,
+            })
 
     except SQLAlchemyError as e:
         db.rollback()
