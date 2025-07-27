@@ -33,6 +33,7 @@
 
 ### 2. จัดการหนังสือ
 <img width="946" height="617" alt="image" src="https://github.com/user-attachments/assets/cfa1eacd-5b8a-42b1-8e41-011e41e4b35c" />
+<img width="958" height="618" alt="image" src="https://github.com/user-attachments/assets/c7fc26b7-4c9f-4cb4-84a1-5a86fa4d9bae" />
 
 
 ### 3. จัดการหมวดหมู่
