@@ -41,7 +41,7 @@ export const handleLogin = async (
     localStorage.setItem("role", decoded.role);
 
     if (decoded.role == "admin") {
-      navigate("/dashboard");
+      navigate("/admin/dashboard");
     } else {
       navigate("/user/dashboard")
     }

@@ -13,14 +13,15 @@ export const NavbarComponent = () => {
   const navigate = useNavigate();
   const name = localStorage.getItem("name");
   const role = localStorage.getItem("role");
-  const pathName = window.location.pathname.split("/")[2];
+  const pathName = window.location.pathname.split("/")[3];
 
   let navigation: NavigationItem[] = [];
   if (role === "admin") {
+    
     navigation = [
-      { name: "Dashboard", path: "/dashboard" },
-      { name: "Manage Categories", path: "/manage-category" },
-      { name: "Manage Borrow", path: "/manage-borrow" },
+      { name: "Dashboard", path: "/admin/dashboard" },
+      { name: "Manage Categories", path: "/admin/manage-category" },
+      { name: "Manage Borrow", path: "/admin/manage-borrow" },
     ];
   } else if (role === "borrower") {
     navigation = [

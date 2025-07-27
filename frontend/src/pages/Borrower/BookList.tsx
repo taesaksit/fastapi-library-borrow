@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { useGetAllBook } from "@/services/hooks/useBook";
 import { useBorrowBook } from "@/services/hooks/useBorrow";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Loader2, BookOpen, User, Calendar, Hash } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Loader2, BookOpen, User, Calendar, Hash, Search, X } from "lucide-react";
 import BorrowModal from "@/components/modals/BorrowModal";
 
 const BookList: React.FC = () => {
@@ -11,6 +12,19 @@ const BookList: React.FC = () => {
   const borrowBookMutation = useBorrowBook();
   const [selectedBook, setSelectedBook] = useState<{ id: number; title: string } | null>(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
+
+  // Filter books based on search query
+  const filteredBooks = useMemo(() => {
+    if (!books || !searchQuery.trim()) return books;
+    
+    const query = searchQuery.toLowerCase().trim();
+    return books.filter(book => 
+      book.title.toLowerCase().includes(query) ||
+      book.author.toLowerCase().includes(query) ||
+      book.category.name.toLowerCase().includes(query)
+    );
+  }, [books, searchQuery]);
 
   const handleBorrowClick = (bookId: number, bookTitle: string) => {
     setSelectedBook({ id: bookId, title: bookTitle });
@@ -31,6 +45,10 @@ const BookList: React.FC = () => {
   const handleModalClose = () => {
     setIsModalOpen(false);
     setSelectedBook(null);
+  };
+
+  const clearSearch = () => {
+    setSearchQuery("");
   };
 
   if (isLoading) {
@@ -57,13 +75,42 @@ const BookList: React.FC = () => {
     <div className="container mx-auto px-4 py-8">
       <div className="mb-8">
         <h1 className="text-3xl font-bold text-gray-900 mb-2">Library Books</h1>
-        <p className="text-gray-600">
+        <p className="text-gray-600 mb-4">
           Total books available: <span className="font-semibold">{books?.length || 0}</span>
+          {searchQuery && (
+            <span className="ml-2">
+              • Showing <span className="font-semibold">{filteredBooks?.length || 0}</span> results
+            </span>
+          )}
         </p>
+        
+        {/* Search Bar */}
+        <div className="relative max-w-md">
+          <div className="relative">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+            <Input
+              type="text"
+              placeholder="Search books by title, author, or category..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="pl-10 pr-10"
+            />
+            {searchQuery && (
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={clearSearch}
+                className="absolute right-1 top-1/2 transform -translate-y-1/2 h-6 w-6 p-0 hover:bg-gray-100"
+              >
+                <X className="h-4 w-4" />
+              </Button>
+            )}
+          </div>
+        </div>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {books?.map((book) => (
+        {filteredBooks?.map((book) => (
           <div key={book.id} className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 border">
             <div className="p-6">
               <div className="flex items-center justify-between mb-4">
@@ -138,11 +185,27 @@ const BookList: React.FC = () => {
         ))}
       </div>
 
-      {books?.length === 0 && (
+      {filteredBooks?.length === 0 && (
         <div className="text-center py-12">
           <BookOpen className="mx-auto h-12 w-12 text-gray-400 mb-4" />
-          <h3 className="text-lg font-medium text-gray-900 mb-2">No books available</h3>
-          <p className="text-gray-600">There are no books in the library at the moment.</p>
+          <h3 className="text-lg font-medium text-gray-900 mb-2">
+            {searchQuery ? "No books found" : "No books available"}
+          </h3>
+          <p className="text-gray-600">
+            {searchQuery 
+              ? `No books match your search for "${searchQuery}". Try different keywords.`
+              : "There are no books in the library at the moment."
+            }
+          </p>
+          {searchQuery && (
+            <Button
+              variant="outline"
+              onClick={clearSearch}
+              className="mt-4"
+            >
+              Clear Search
+            </Button>
+          )}
         </div>
       )}
 

@@ -28,7 +28,7 @@ const App = () => {
         >
           {/* Admin Routes */}
           <Route 
-            path="/dashboard" 
+            path="/admin/dashboard" 
             element={
               <AdminRoute>
                 <Dashboard />
@@ -36,7 +36,7 @@ const App = () => {
             }
           />
           <Route 
-            path="/manage-category" 
+            path="/admin/manage-category" 
             element={
               <AdminRoute>
                 <ManageCategory />
@@ -44,7 +44,7 @@ const App = () => {
             }
           />
           <Route 
-            path="/manage-borrow" 
+            path="/admin/manage-borrow" 
             element={
               <AdminRoute>
                 <ManageBorrow />
