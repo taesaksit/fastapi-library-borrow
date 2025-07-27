@@ -8,7 +8,7 @@
 ## 👤 สำหรับผู้ใช้งาน (USER)
 
 ### 1. หน้าแรก
-<img width="937" height="679" alt="image" src="https://github.com/user-attachments/assets/896a6065-a29d-4229-895e-7c5adfe2e946](https://github.com/user-attachments/assets/5c75e8a4-0bc5-41c8-b39c-f9f4fe360298" />
+<img width="957" height="686" alt="image" src="https://github.com/user-attachments/assets/17ea546a-5577-4b2e-adc3-b945af5236ab" />
 
 
 ### 2. รายการหนังสือ
